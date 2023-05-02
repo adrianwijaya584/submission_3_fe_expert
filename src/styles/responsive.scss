@@ -1,0 +1,94 @@
+@media screen and (min-width: 600px) {
+
+}
+
+@media screen and (min-width: 700px) {
+  #navbarBtn {
+    display: none;
+  }
+
+  header {
+    .title a {
+      font-size: 1em;
+    }
+
+    #navbarDrawer {
+      position: relative;
+      display: block;
+      top: 0;
+      right: 0;
+      height: fit-content;
+      width: fit-content;
+      background: transparent;
+      padding-top: 0;
+    }
+
+    li {
+      display: inline-block;
+      margin-bottom: 0 !important;
+    }
+  }
+
+  #restaurants,
+  #reviewCards,
+  #comments,
+  .detailPageSkeleton .reviewCards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .detailPageSkeleton {
+    .title {
+      width: 20%;
+    }
+
+    .menusSection {
+      flex-direction: row;
+    }
+
+    .menuTitle {
+      width: 25%;
+    }
+
+    .menuList {
+      width: 50%;
+    }
+
+    .menuLabel {
+      width: 35%;
+    }
+    
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .jumbotron {
+    background-image: url("../public/images/hero-image-1-large.jpg");
+  }
+
+  #mainWrapper {
+    padding: 0 80px;
+  }
+
+  .restaurantDetail {
+    .generalInfo {
+      .categories {
+        flex-direction: row;
+      }
+    }
+
+    .menus {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #restaurants,
+  #reviewCards,
+  #comments,
+  .detailPageSkeleton .reviewCards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}

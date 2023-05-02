@@ -1,0 +1,20 @@
+[
+  {
+    "name": "John Doe",
+    "job": "pelajar SMK",
+    "comment": "Webnya mudah digunakan",
+    "profilePic": "https://xsgames.co/randomusers/assets/avatars/male/30.jpg"
+  },
+  {
+    "name": "Mary Doe",
+    "job": "Anak Kuliahan",
+    "comment": "Webnya keren.",
+    "profilePic": "https://xsgames.co/randomusers/assets/avatars/female/40.jpg"
+  },
+  {
+    "name": "Little Man",
+    "job": "pelajar SMK",
+    "comment": "Webnya responsive.",
+    "profilePic": "https://xsgames.co/randomusers/assets/avatars/male/50.jpg"
+  }
+]
