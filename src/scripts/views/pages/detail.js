@@ -1,4 +1,4 @@
-import db from '../../data/favoriteRestaurantsIDB';
+import idb from '../../data/favoriteRestaurantsIDB';
 import UrlParser from '../../routes/urlParser';
 import favoriteButtonPresenter from '../../utils/favoriteButtonPresenter';
 import restaurantsource from '../../data/restaurantSource';
@@ -26,17 +26,17 @@ export default {
 
     favoriteButtonPresenter.init({
       favoriteButtonSection: document.querySelector('#favoriteButtonContainer'),
-      favoriteRestaurants: db,
+      favoriteRestaurantsDb: idb,
       restaurant: {
         id: restaurant.id,
         pictureId: restaurant.pictureId,
         name: restaurant.name,
         address: restaurant.address,
         city: restaurant.city,
-        description: restaurant.description,
         rating: restaurant.rating,
-        customerReviews: restaurant.customerReviews,
+        description: restaurant.description,
         menus: restaurant.menus,
+        customerReviews: restaurant.customerReviews,
       },
     });
 

@@ -6,12 +6,12 @@ import {
 export default {
   async init({
     favoriteButtonSection,
-    favoriteRestaurants,
+    favoriteRestaurantsDb,
     restaurant,
   }) {
     this._favoriteButtonSection= favoriteButtonSection;
     this._restaurant= restaurant;
-    this._favoriteRestaurants= favoriteRestaurants;
+    this._favoriteRestaurantsDb= favoriteRestaurantsDb;
 
     await this._render();
   },
@@ -27,7 +27,7 @@ export default {
   },
 
   async _isRestaurantExist(id) {
-    const restaurant= await this._favoriteRestaurants.getRestaurant(id);
+    const restaurant= await this._favoriteRestaurantsDb.getRestaurant(id);
     return !!restaurant;
   },
 
@@ -35,7 +35,7 @@ export default {
     this._favoriteButtonSection.innerHTML= dislikeBtnTemplate();
     const dislikeButton= document.querySelector('#favoriteButton');
     dislikeButton.addEventListener('click', async ()=> {
-      await this._favoriteRestaurants.deleteRestaurant(this._restaurant.id);
+      await this._favoriteRestaurantsDb.deleteRestaurant(this._restaurant.id);
       this._render();
     });
   },
@@ -44,7 +44,7 @@ export default {
     this._favoriteButtonSection.innerHTML= likeBtnTemplate();
     const likeButton= document.querySelector('#favoriteButton');
     likeButton.addEventListener('click', async ()=> {
-      await this._favoriteRestaurants.putRestaurant(this._restaurant);
+      await this._favoriteRestaurantsDb.putRestaurant(this._restaurant);
       this._render();
     });
   },

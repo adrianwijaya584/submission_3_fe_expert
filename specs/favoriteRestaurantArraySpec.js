@@ -33,7 +33,6 @@ const favoriteRestaurantArray= {
   },
 };
 
-// describe('implementasi test array restoran favorit', ()=> {
 describe('favorite restaurant array test implementation', ()=> {
   afterEach(()=> favoriteRestaurants= []);
 

@@ -208,14 +208,14 @@ export const createRestaurantReviewsCard= (customerReviews)=>
   `).join('');
 
 export const likeBtnTemplate= ()=> `
-  <button aria-label="tambahkan restoran ke favorit" 
+  <button aria-label="tambahkan restoran ke  daftar favorit" 
     id="favoriteButton">
     <i class="fa-regular fa-thumbs-up"></i> Tambahkan ke favorit 
   </button>
 `;
 
 export const dislikeBtnTemplate= ()=> `
-  <button aria-label="hapus restoran dari favorit" 
+  <button aria-label="hapus restoran dari daftar favorit" 
     id="favoriteButton" class="dislike">
     <i class="fa-regular fa-thumbs-down"></i> Hapus dari favorit
   </button>

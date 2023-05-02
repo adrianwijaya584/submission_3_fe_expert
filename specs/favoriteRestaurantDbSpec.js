@@ -1,11 +1,10 @@
 import {favoriteRestaurantModel} from './contract/favoriteRestaurantContract';
-import db from '../src/scripts/data/favoriteRestaurantsIDB';
+import idb from '../src/scripts/data/favoriteRestaurantsIDB';
 
-// describe('implementasi kontrak test Index DB restoran favorit', ()=> {
-describe(`indexDB favorite restaurant test implementation`, ()=> {
+describe('favorite restaurant indexDB test implementation', ()=> {
   afterEach(async ()=> {
-    (await db.getAllRestaurants()).forEach(async (restaurant)=> {
-      await db.deleteRestaurant(restaurant.id);
+    (await idb.getAllRestaurants()).forEach(async (restaurant)=> {
+      await idb.deleteRestaurant(restaurant.id);
     });
   });
 

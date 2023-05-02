@@ -1,14 +1,14 @@
+/* eslint-disable max-len */
 import db from '../src/scripts/data/favoriteRestaurantsIDB';
 import * as TestFactories from './helpers/testFactories';
 
-// describe('Menghapus restoran dari favorit', ()=> {
-describe('remove restaurant from favorite list', ()=> {
-  const addlikeButtonContainer= ()=> {
+describe('remove restaurant from favorites restaurant list', ()=> {
+  const createFavoriteButtonContainer= ()=> {
     document.body.innerHTML= '<div id="favoriteButtonContainer"></div>';
   };
 
   beforeEach(async ()=> {
-    addlikeButtonContainer();
+    createFavoriteButtonContainer();
     await db.putRestaurant({id: 1});
   });
 
@@ -16,37 +16,32 @@ describe('remove restaurant from favorite list', ()=> {
     await db.deleteRestaurant(1);
   });
 
-  // it('harus dapat menampilkan tombol hapus dari favorit saat restoran sudah difavoritkan', async ()=> {
-  it(`should show favorite restaurant delete button when resaturant is
-    already f`, async ()=> {
-    await TestFactories.favoriteButtonPresenterInRestaurant({id: 1});
+  it('should show favorite restaurant delete button when resaturant is already liked', async ()=> {
+    await TestFactories.favoriteRestaurantButtonPresenter({id: 1});
 
-    expect(document.querySelector('[aria-label="hapus restoran dari favorit"]'))
+    expect(document.querySelector('[aria-label="hapus restoran dari daftar favorit"]'))
         .toBeTruthy();
   });
 
-  // it('harus tidak menampilkan tombol tambah ke favorit saat restoran sudah difavoritkan', async ()=> {
-  it(`should not show favorite restaurant fav`, async ()=> {
-    await TestFactories.favoriteButtonPresenterInRestaurant({id: 1});
+  it('should not show favorite restaurant button when restaurant is already liked', async ()=> {
+    await TestFactories.favoriteRestaurantButtonPresenter({id: 1});
 
-    expect(document.querySelector('[aria-label="tambahkan restoran ke favorit"]'))
+    expect(document.querySelector('[aria-label="tambahkan restoran ke  daftar favorit"]'))
         .toBeFalsy();
   });
 
-  // it('harus bisa menghapus restoran yang difavoritkan dari daftar restoran favorit', async ()=> {
-  it('harus bisa menghapus restoran yang difavoritkan dari daftar restoran favorit', async ()=> {
-    await TestFactories.favoriteButtonPresenterInRestaurant({id: 1});
-    document.querySelector('[aria-label="hapus restoran dari favorit"]')
+  it('should delete liked restaurant from favorite restaurants list', async ()=> {
+    await TestFactories.favoriteRestaurantButtonPresenter({id: 1});
+    document.querySelector('[aria-label="hapus restoran dari daftar favorit"]')
         .dispatchEvent(new Event('click'));
     expect(await db.getAllRestaurants()).toEqual([]);
   });
 
-  // it('harus tidak throw error apabila restoran yang belum difavoritkan tidak ada di daftar restoran favorit', async ()=> {
-  it('harus tidak throw error apabila restoran yang belum difavoritkan tidak ada di daftar restoran favorit', async ()=> {
-    await TestFactories.favoriteButtonPresenterInRestaurant({id: 1});
+  it('should not throw error if dislike restaurant is not in favorite restaurants list ', async ()=> {
+    await TestFactories.favoriteRestaurantButtonPresenter({id: 1});
     await db.deleteRestaurant(1);
 
-    document.querySelector('[aria-label="hapus restoran dari favorit"]').dispatchEvent(new Event('click'));
+    document.querySelector('[aria-label="hapus restoran dari daftar favorit"]').dispatchEvent(new Event('click'));
     expect(await db.getAllRestaurants()).toEqual([]);
   });
 });
