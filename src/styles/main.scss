@@ -2,8 +2,8 @@
 
 $bgPrimary: #131316;
 $bgCard: #2f2f3b;
-$primaryColor: #a7710c;
-$primaryColorHover: #d68d05;
+$primaryColor: #A7710C;
+$primaryColorHover: #D68D05;
 $whiteColor: #f0f0f0;
 $grayColor: #888;
 $borderColor: #2c2c3a;
@@ -157,7 +157,7 @@ main {
 
   .headline {
     p {
-      color: $grayColor;
+      color: $whiteColor;
       margin-top: 10px;
     }
   }
@@ -198,7 +198,7 @@ main {
 
     .location span,
     .rating span {
-      color: $grayColor;
+      color: $whiteColor;
     }
   }
 
@@ -280,7 +280,7 @@ main {
 
   .headline {
     p {
-      color: $grayColor;
+      color: $whiteColor;
       margin-top: 10px;
     }
   }
@@ -299,21 +299,11 @@ main {
   border-radius: 6px;
   
   .bio {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
     margin-top: 15px;
 
-    img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50px;
-    }
-
     .job {
-      margin-top: 6px;
-      color: $grayColor;
+      margin-top: 10px;
+      color: $whiteColor;
     }
     
   }
@@ -524,7 +514,7 @@ main {
     }
 
     .date {
-      color: $grayColor;
+      color: $whiteColor;
     }
 
     #reviewCards {
@@ -560,7 +550,7 @@ main {
 
     input,
     textarea {
-      border: 1.5px solid $grayColor;
+      border: 1.5px solid $whiteColor;
       background: transparent;
       padding: 1em;
       color: $whiteColor;
@@ -591,5 +581,5 @@ footer {
   align-items: center;
   justify-content: center;
   padding: 10px;
-  color: $grayColor;
+  color: $whiteColor;
 }

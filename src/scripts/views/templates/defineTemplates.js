@@ -57,15 +57,8 @@ export const createCommentCard= (comment)=> `
     <p class="description">${comment.comment}</p>
 
     <div class="bio">
-      <img
-        class="lazyload"
-        src="${comment.profilePic}"
-        alt="${comment.name}"
-      />
-      <div>
-        <p class="name">${comment.name}</p>
-        <p class="job">${comment.job}</p>
-      </div>
+      <p class="name">${comment.name}</p>
+      <p class="job">${comment.job}</p>
     </div>
   </div>
 `;
