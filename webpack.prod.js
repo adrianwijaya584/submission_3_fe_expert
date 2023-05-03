@@ -55,7 +55,7 @@ module.exports= merge(common, {
     }),
     new WorkboxWebpackPlugin.GenerateSW({
       swDest: './sw.bundle.js',
-      swSrc: './src/scripts/utils/swRegister.js',
+      // swSrc: './src/scripts/utils/swRegister.js',
     }),
   ],
 });
