@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import db from '../src/scripts/data/favoriteRestaurantsIDB';
+import idb from '../src/scripts/data/favoriteRestaurantsIDB';
 import * as TestFactories from './helpers/testFactories';
 
 describe('remove restaurant from favorites restaurant list', ()=> {
@@ -9,11 +9,11 @@ describe('remove restaurant from favorites restaurant list', ()=> {
 
   beforeEach(async ()=> {
     createFavoriteButtonContainer();
-    await db.putRestaurant({id: 1});
+    await idb.putRestaurant({id: 1});
   });
 
   afterEach(async ()=> {
-    await db.deleteRestaurant(1);
+    await idb.deleteRestaurant(1);
   });
 
   it('should show favorite restaurant delete button when resaturant is already liked', async ()=> {
@@ -34,14 +34,14 @@ describe('remove restaurant from favorites restaurant list', ()=> {
     await TestFactories.favoriteRestaurantButtonPresenter({id: 1});
     document.querySelector('[aria-label="hapus restoran dari daftar favorit"]')
         .dispatchEvent(new Event('click'));
-    expect(await db.getAllRestaurants()).toEqual([]);
+    expect(await idb.getAllRestaurants()).toEqual([]);
   });
 
   it('should not throw error if dislike restaurant is not in favorite restaurants list ', async ()=> {
     await TestFactories.favoriteRestaurantButtonPresenter({id: 1});
-    await db.deleteRestaurant(1);
+    await idb.deleteRestaurant(1);
 
     document.querySelector('[aria-label="hapus restoran dari daftar favorit"]').dispatchEvent(new Event('click'));
-    expect(await db.getAllRestaurants()).toEqual([]);
+    expect(await idb.getAllRestaurants()).toEqual([]);
   });
 });

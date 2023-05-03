@@ -8,5 +8,5 @@ describe('favorite restaurant indexDB test implementation', ()=> {
     });
   });
 
-  favoriteRestaurantModel(db);
+  favoriteRestaurantModel(idb);
 });

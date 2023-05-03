@@ -11,7 +11,7 @@ describe('adding restaurant to favorite list', ()=> {
     favoriteButtonContainer();
   });
 
-  it('should show liking button if restaurant is not liked before', async ()=> {
+  it('should show like button if restaurant is not liked before', async ()=> {
     await TestFactories.favoriteRestaurantButtonPresenter({id: 1});
 
     expect(
