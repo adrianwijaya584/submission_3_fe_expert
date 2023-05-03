@@ -53,9 +53,9 @@ module.exports= merge(common, {
     new BundleAnalyzerPlugin({
       analyzerMode: 'disabled',
     }),
-    new WorkboxWebpackPlugin.GenerateSW({
+    new WorkboxWebpackPlugin.InjectManifest({
       swDest: './sw.bundle.js',
-      // swSrc: './src/scripts/utils/swRegister.js',
+      swSrc: './src/scripts/utils/srcSw.js',
     }),
   ],
 });
